@@ -7,7 +7,7 @@ const CompetitionDetails = () => {
   const [competition, setCompetition] = useState(null);
 
   useEffect(() => {
-    axios.get(`/api/competitions/${id}`)
+    axios.get(`http://127.0.0.1:8000/api/competitions/${id}`)
       .then(response => setCompetition(response.data))
       .catch(error => console.error('Erreur:', error));
   }, [id]);

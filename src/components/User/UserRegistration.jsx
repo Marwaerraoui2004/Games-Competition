@@ -6,7 +6,7 @@ const UserRegistration = ({ competitionId }) => {
   const [score, setScore] = useState(0);
 
   const handleRegister = () => {
-    axios.post('/api/registrations', { competition_id: competitionId, status, score })
+    axios.post('http://127.0.0.1:8000/api/registrations', { competition_id: competitionId, status, score })
       .then(response => alert('Inscription réussie!'))
       .catch(error => console.error('Erreur:', error));
   };

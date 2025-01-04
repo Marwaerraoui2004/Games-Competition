@@ -4,7 +4,7 @@ const CompetitionList = () => {
     const [competitions, setCompetitions] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:8000/api/competitions')
+        fetch('http://127.0.0.1:8000/api/competitions')
             .then(response => response.json())
             .then(data => setCompetitions(data))
             .catch(error => console.error('Error fetching competitions:', error));

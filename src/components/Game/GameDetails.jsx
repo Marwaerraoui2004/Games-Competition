@@ -7,7 +7,7 @@ const GameDetails = () => {
   const [game, setGame] = useState(null);
 
   useEffect(() => {
-    axios.get(`/api/games/${id}`)
+    axios.get(`http://127.0.0.1:8000/api/games/${id}`)
       .then(response => setGame(response.data))
       .catch(error => console.error('Erreur:', error));
   }, [id]);
