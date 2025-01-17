@@ -23,14 +23,21 @@ const GameList = () => {
 
   return (
     <div>
-      <h1>Games List</h1>
-      <ul>
+      <h1>Choose From A Variety Of Games</h1>
+      <table>
+        <td>
         {games.map(game => (
-          <li key={game.id}>
+          <div> 
+            <tr key={game.id}>
             {game.name}
-          </li>
+            </tr>
+            <img src="" alt="" />
+          </div>
+         
         ))}
-      </ul>
+        </td>
+      </table>
+      
     </div>
   );
 };

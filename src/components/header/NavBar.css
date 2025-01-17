@@ -1,86 +1,30 @@
-/* NavbarFuturisticEnhanced.css */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
+ 
   
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0f0f1f; /* Fond sombre pour faire ressortir les néons */
-    color: #fff;
-  }
-  
-  /* Navbar Style */
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(15, 15, 31, 0.8); /* Transparent avec effet de flou */
-    padding: 20px 40px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     position: sticky;
     top: 0;
     z-index: 999;
-    backdrop-filter: blur(15px);
     transition: all 0.4s ease;
   }
   
-  /* Logo étoilé */
-  .navbar .logo a {
-    color: #ff00ff; /* Couleur néon violette pour le logo */
-    font-size: 32px;
-    text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    position: relative;
-    transition: transform 0.3s ease, color 0.3s ease;
-    text-shadow: 
-      0 0 10px #ff00ff, 
-      0 0 20px #672d18, 
-      0 0 30px #345f5f, 
-      
-     
-  }
-  @keyframes disco-logo {
-    0% { color: #ff00ff; text-shadow: 0 0 10px #c16fc1, 0 0 20px #ff00ff; }
-    25% { color: #00ffff; text-shadow: 0 0 10px #345f5f, 0 0 20px #00ffff; }
-    50% { color: #b731cc; text-shadow: 0 0 10px #b731cc, 0 0 20px #672d18; }
-   
-  }
-  .navbar .logo a {
-    animation: disco-logo 3s infinite;
-  }
-  .navbar .logo a:hover {
-    transform: scale(1.2);
-    color: #00ffff; /* Change la couleur en néon cyan */
-    text-shadow: 
-      0 0 15px #00ffff, 
-      0 0 30px #00ffff, 
-      0 0 45px #ff00ff, 
-      0 0 60px #ff4500, 
-      0 0 75px #00ffff;
+  
+  
+  
+  .navbar .logo img {
+    width: 100px;
+    height: 100px;
   }
   
-  /* Animation lumineuse étoilée */
-  .navbar .logo a::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(255, 0, 255, 0.5), transparent 60%);
-    border-radius: 50%;
-    filter: blur(20px);
-    animation: star-glow 2s infinite alternate;
-    z-index: -1;
-  }
-  
-  /* Nav Links */
   .navbar .nav-links {
     list-style: none;
     display: flex;
@@ -88,14 +32,14 @@
   }
   
   .navbar .nav-links a {
-    color: #00ffff; /* Couleur néon cyan */
+    color:  #65B2EA; 
     text-decoration: none;
     font-size: 18px;
     position: relative;
     font-weight: 600;
     padding: 10px 15px;
     transition: all 0.3s ease;
-    text-shadow: 0 0 2px #00ffff, 0 0 5px #00ffff;
+    text-shadow: 0 0 5px #00ffff;
   }
   
   .navbar .nav-links a:hover {
@@ -104,7 +48,6 @@
     text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
   }
   
-  /* Soulignement dynamique */
   .navbar .nav-links a::before {
     content: '';
     position: absolute;
@@ -121,29 +64,24 @@
     width: 100%;
   }
   
-  /* Auth Links */
   .auth-links a {
     color: #fff;
     text-decoration: none;
     padding: 12px 30px;
-    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    background: #65B2EA;
     border-radius: 25px;
     font-size: 16px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(255, 0, 255, 0.5);
     text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
   }
   
   .auth-links a:hover {
     transform: scale(1.1);
-    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    background:   #65B2EA;
     box-shadow: 0 4px 30px rgba(0, 255, 255, 0.7);
   }
   
-  /* Navbar Hover Animation */
-  .navbar:hover {
-    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.5);
-  }
+  
   
   /* Keyframes pour les animations */
   @keyframes star-glow {

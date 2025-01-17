@@ -1,0 +1,119 @@
+@keyframes breathing {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  * {
+    box-sizing: border-box;
+}
+  .page{
+    height: 100%;
+    width: 100%;
+    background: url('bg.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+	overflow-x: hidden; 
+  }
+  .bodyPage {
+    background:rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: row; 
+  }
+  
+  
+  
+  .hero {
+    margin-left: 160px; 
+    animation: breathing 3s infinite ease-in-out;
+    width: 400px;
+    height: auto;
+  }
+  .hero img{
+    width:  400px;
+    height: auto;
+  }
+  
+  .text {
+    background-color: rgba(0, 0, 0, 0.3); 
+    padding: 40px;
+    width: 600px; 
+    font-size: 18px;
+    line-height: 33px;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    text-align: center;
+  }
+  
+  .text h1 {
+    color: #28648F;
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .first-char{
+    font-size: 70px;
+    color: #ff00ff;
+  }
+  
+  .text p {
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+
+
+  .btn {
+    margin-left: 150px;
+    width: 200px;
+    height: 200px;
+    background-color: #ff00ff; 
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.4;
+    cursor: pointer;
+    clip-path: polygon(
+      50% 0%, 
+      60% 20%, 
+      100% 25%, 
+      70% 40%, 
+      80% 70%, 
+      50% 55%, 
+      20% 70%, 
+      30% 40%, 
+      0% 25%, 
+      40% 20%
+    );
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 80px solid #f055f0; 
+    border-style: dotted;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+  }
+  .btn span{
+    margin-top: -50px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .btn:hover {
+    background-color: #f055f0; 
+  }

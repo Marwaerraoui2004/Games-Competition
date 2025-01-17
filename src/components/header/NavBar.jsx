@@ -6,23 +6,21 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <Link to="/">GameComp</Link>
+        <Link to="/home"><img src="lg.png" alt="" /></Link>
+       
       </div>
       <ul className="nav-links">
         <li>
-          <Link to="/">Accueil</Link>
+          <Link to="/home">Home</Link>
         </li>
         <li>
-          <Link to="/competitions">Compétitions</Link>
+          <Link to="/games">Games</Link>
         </li>
         <li>
-          <Link to="/games">Jeux</Link>
+          <Link to="/users">Participants</Link>
         </li>
         <li>
-          <Link to="/users">Utilisateurs</Link>
-        </li>
-        <li>
-          <Link to="/about">À propos</Link>
+          <Link to="/about">Company</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>
@@ -30,10 +28,10 @@ const Navbar = () => {
       </ul>
       <div className="auth-links">
         <Link to="/login" className="login">
-          Se connecter
+          Log in
         </Link>
         <Link to="/register" className="register">
-          S'inscrire
+          Register
         </Link>
       </div>
     </nav>
