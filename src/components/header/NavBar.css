@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0);
     position: sticky;
     top: 0;
     z-index: 999;
@@ -29,6 +29,9 @@
     list-style: none;
     display: flex;
     gap: 25px;
+    background-color: rgba(0, 0, 0, 0.74) ;
+    padding: 10px;
+    border-radius: 50px;
   }
   
   .navbar .nav-links a {
@@ -56,6 +59,7 @@
     background: linear-gradient(90deg, #ff00ff, #00ffff);
     bottom: 0;
     left: 50%;
+    border-radius: 50px;
     transform: translateX(-50%);
     transition: width 0.3s ease;
   }

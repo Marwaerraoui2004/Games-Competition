@@ -1,0 +1,50 @@
+footer {
+    background-color: #1d1c1c;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-content p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon img:hover {
+    transform: scale(1.1);  /* Légère augmentation de la taille au survol */
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Pour mobile, réduire la taille des icônes */
+  @media (max-width: 768px) {
+    .social-icon img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

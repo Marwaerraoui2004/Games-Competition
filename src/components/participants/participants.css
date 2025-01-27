@@ -1,0 +1,158 @@
+/* Vidéo de fond ajustée */
+.bg-video {
+    position: absolute;  /* Positionnée en dessous du contenu */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Permet de couvrir entièrement l'écran sans déformer */
+    z-index: -1;  /* Vidéo derrière tout le contenu */
+    filter: brightness(50%); /* Réduit la luminosité pour améliorer la lisibilité du texte */
+    transition: filter 0.5s ease; /* Transition fluide si la luminosité change */
+}
+
+.bg-video:hover {
+    filter: brightness(70%); /* Augmenter la luminosité lors du survol */
+}
+
+/* Titre des participants */
+h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeInTitle 2s ease-out;
+}
+
+/* Animation pour le titre */
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Message d'erreur */
+.error-message {
+    color: #e74c3c;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideInError 1s ease-out;
+}
+
+/* Animation pour le message d'erreur */
+@keyframes slideInError {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Liste des participants */
+.participants-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+    animation: fadeInList 2s ease-out;
+}
+
+/* Animation pour la liste des participants */
+@keyframes fadeInList {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Item de participant */
+.participant-item {
+    background-color: rgba(110, 110, 110, 0.85);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex; /* Changer le display pour un alignement horizontal */
+    align-items: center; /* Centrer les éléments verticalement */
+    justify-content: space-between;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Style de l'image dans le participant */
+.participant-item span img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px; /* Espacement entre l'image et le texte */
+}
+
+/* Survol de l'élément participant */
+.participant-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #7c9496;
+}
+
+.participant-item span {
+    font-weight: 500;
+    color: #34495e;
+}
+
+.participant-item span:last-child {
+    font-weight: 700;
+    color: blue; /* Vert pour le score */
+}
+
+/* Aucun participant trouvé */
+.participants-list li {
+    font-size: 1.3em;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-align: center;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #899596;
+    margin-top: 10px;
+    animation: fadeInEmpty 2s ease-out;
+}
+
+/* Animation pour le message "Aucun participant trouvé" */
+@keyframes fadeInEmpty {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Conteneur des participants */
+.participants-container {
+    background-color: rgba(0, 0, 0, 0.4); /* Fond sombre avec un léger effet de transparence */
+    backdrop-filter: blur(8px); /* Flou de fond pour un effet esthétique */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}

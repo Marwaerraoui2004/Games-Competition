@@ -1,74 +1,72 @@
+import React, { useState } from "react";
 import axios from "axios";
-import { useState } from "react";
-import GameList from "../Game/GameList";
+import { useNavigate } from "react-router-dom";  // Importation du hook useNavigate
+import './login.css';
 
-export default function Login() {
+export default function RegisterForCompetition() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");  // Added password field
-  const [role, setRole] = useState("en_attente");  // Default to 'Admin' (you can adjust this if necessary)
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [envoi, setEnvoi] = useState(false);
-  const url = "http://127.0.0.1:8000/api/users";
+  const [message, setMessage] = useState("");
 
-  const envoyer = async () => {
-    setEnvoi(true);
+  const navigate = useNavigate();  // Initialisation du hook useNavigate
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
-      const response = await axios.post(url, { name, email, password, role });  // Include password
-      console.log("Réponse serveur :", response.data);
+      // Envoi des données de l'utilisateur à l'API Laravel
+      const response = await axios.post("http://127.0.0.1:8000/api/competitions/register", {
+        name,
+        email,
+      });
 
-      const token = response.data.token;
-      localStorage.setItem("token", token);
+      // Affichage du message de succès
+      setMessage(response.data.message);
 
-      setIsLoggedIn(true);
+      // Redirection vers /home après succès
+      navigate('/home');
     } catch (error) {
-      console.error("Erreur de connexion :", error);
-      setIsLoggedIn(false);
-    } finally {
-      setEnvoi(false);
+      console.error(error);
+      setMessage("Erreur lors de l'inscription. Vérifiez vos données.");
+    }
+  };
+
+  // Fonction pour gérer l'appui sur la touche 'Entrée'
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit(e); // Appeler handleSubmit si 'Entrée' est pressée
     }
   };
 
   return (
-    <form>
-      {envoi ? (
-        <div>Loading...</div>
-      ) : isLoggedIn ? (
-        <GameList />
-      ) : (
-        <div className="login-form">
-          <h1 className="titree">Login</h1>
+    <div className="form-container">
+      <div className="register-form">
+        <h2 className="form-heading">Inscription au Jeux</h2>
+        <form onSubmit={handleSubmit}>
           <input
+            className="form-input"
             type="text"
-            className="input-field"
-            placeholder="Entrez votre Nom"
+            placeholder="Nom"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
+            onKeyDown={handleKeyDown}  // Ajouter l'événement pour 'Entrée'
           />
           <input
+            className="form-input"
             type="email"
-            className="input-field"
-            placeholder="Entrez votre Email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+            onKeyDown={handleKeyDown}  // Ajouter l'événement pour 'Entrée'
           />
-          <input
-            type="password"
-            className="input-field"
-            placeholder="Entrez votre Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)} 
-          />
-          <select value={role} onChange={(e) => setRole(e.target.value)}>
-            <option value="en_attente">Admin</option>
-            <option value="accepté">Participant</option>
-          </select>
-
-          <button className="login-button" type="button" onClick={envoyer}>
-            Valider
+          <button type="submit" className="submit-button">
+            Postuler
           </button>
-        </div>
-      )}
-    </form>
+        </form>
+        <p>{message}</p>
+      </div>
+    </div>
   );
 }

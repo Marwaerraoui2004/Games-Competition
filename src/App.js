@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CompetitionProvider } from './components/context/CompetitionContext';
-import UserList from './components/User/UserList';
-import UserRegistration from './components/User/UserRegistration';
 import GameList from './components/Game/GameList';
 import Navbar from './components/header/NavBar';
-import CompetitionList from './components/Competition/CompetitionList';
 import Home from './components/HomePage/Home';
 import Intro from './components/intro/Intro';
-import DetailsComp from './components/HomePage/detailsComp';
-import About from './components/company/About';
+import Footer from './components/footer/Footer';
+import Login from './components/login/Login';
+import Participants from './components/participants/participants';
+import GameDetails from './components/Game/GameDetails';
 const App = () => {
-  const [isIntroCompleted, setIsIntroCompleted] = useState(false);
+  const [isIntroCompleted, setIsIntroCompleted] = useState(() => {
+    return localStorage.getItem('introCompleted') === 'true';
+  });
+  const handleIntroComplete = () => {
+    setIsIntroCompleted(true);
+    localStorage.setItem('introCompleted', 'true');
+  };
 
   return (
     <CompetitionProvider>
@@ -19,15 +24,13 @@ const App = () => {
         {isIntroCompleted && <Navbar />} 
 
         <Routes>
-          <Route path="/" element={<Intro onIntroComplete={() => setIsIntroCompleted(true)} />}/>
-          <Route path='/detailscomp' element={<DetailsComp/>}/>
+        <Route path="/" element={<Intro onIntroComplete={handleIntroComplete} />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/competitions" element={<CompetitionList />} />
-          <Route path="/users" element={<UserList />} />
+          <Route path="/participants" element={<Participants />} />
           <Route path="/games" element={<GameList />}/>
-          <Route path="/about" element={<About />}/>
-          <Route path="/registrations/:competitionId" element={<UserRegistration />} />
+          <Route path="/postuler" element={<Login />}/>
         </Routes>
+        <Footer/>
       </Router>
     </CompetitionProvider>
   );

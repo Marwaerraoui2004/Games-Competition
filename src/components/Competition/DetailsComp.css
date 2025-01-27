@@ -1,0 +1,235 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.container {
+  background-image: url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/fc8d0c8c803a8e91a1912df9054b3be90211a2d9-3288x2100.png?auto=format&fit=fill&q=80&w=611');
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-comp-container {
+  font-family: 'Arial', sans-serif;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.85); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  overflow: hidden;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  z-index: 10;
+}
+
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.details-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.details-header h1 {
+  font-size: 3rem;
+  color: #00aaff; 
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+  transition: color 0.3s ease;
+}
+
+.comp-title {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #beb4b4;  
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #fad7d7;  
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.comp-dates p,
+.comp-rules li,
+.comp-prizes li {
+  font-size: 1rem;
+  color:orangered;  
+  line-height: 1.5;
+  align-items: center;
+}
+
+
+.comp-dates{
+  text-align: center; /* Centrer le texte */
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #beb4b4;
+  transition: color 0.3s ease;
+}
+
+.list li:hover {
+  color: #00aaff;  /* Bleu vif */
+}
+
+.list li:before {
+  content: "✔";
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00c300;  /* Vert clair */
+  font-size: 1.5rem;
+}
+.comp-prizes p {
+color: #e60000;}
+
+.comp-prizes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comp-prizes li {
+  font-size: 1.3rem;
+  color: #beb4b4;  /* Gris foncé */
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.comp-prizes li:before {
+  content: "🏆";
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6rem;
+  color: #ffbf00;  /* Jaune doré */
+}
+
+.comp-prizes li:first-child:before {
+  color: #e60000;  /* Rouge vif */
+}
+
+.comp-prizes li:nth-child(2):before {
+  color: #00aaff;  /* Bleu vif */
+}
+
+.comp-prizes li:nth-child(3):before {
+  color: #28a745;  /* Vert */
+}
+
+button {
+  background-color: #00aaff;  /* Bleu vif */
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #0088cc;  /* Bleu plus foncé */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .details-comp-container {
+    padding: 2rem;
+  }
+
+  .details-header h1 {
+    font-size: 2rem;
+  }
+
+  .comp-title {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .list li {
+    font-size: 1rem;
+  }
+
+  .comp-prizes li {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .details-comp-container {
+    padding: 1.5rem;
+  }
+
+  .details-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .comp-title {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .list li {
+    font-size: 0.9rem;
+  }
+
+  .comp-prizes li {
+    font-size: 1rem;
+  }
+}
+
+
+.details-comp-container img {
+  width: 500px;
+  margin-right: 80px;
+  animation: breathing 3s infinite ease-in-out;
+  height: auto;
+}
+
