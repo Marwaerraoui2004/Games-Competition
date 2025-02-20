@@ -16,17 +16,18 @@ export default function Intro({ onIntroComplete }) {
       },
     });
 
-    // Redirection après 3 secondes
     setTimeout(() => {
       navigate('/home');
-    }, 3000);
+    }, 4000);
   }, [navigate,onIntroComplete]);
 
   return (
+    <div className='container-I'>
     <div className="intro-container">
       <div className="flame">
         <h1 className="slogan">Compète. Gagne. Brille.</h1>
       </div>
+    </div>
     </div>
   );
 }

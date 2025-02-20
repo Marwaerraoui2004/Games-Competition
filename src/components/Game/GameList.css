@@ -37,47 +37,51 @@
   color: #333;
 }
 .game-list-container {
+
   display: flex;
   flex-wrap: wrap;
   margin-top: -30px;
   justify-content: center;
   padding: 20px;
   gap: 20px;
-  background-color: black;
+  background-color: #03172b;
+
 }
 .game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100px;
+
 }
 .game-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  width: 100%;
+  grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
+  gap: 40px;
+  width: fit-content; /* S'adapte au contenu */
 }
+
 .game-card {
   background: #fff;
-  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  width: 600px; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .game-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Vidéo de jeu */
-.game-video {
+.game-img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain; /* Conserve le ratio d'aspect sans étirer l'image */
+  background-color: #f0f0f0; /* Arrière-plan de secours */
 }
-
 .game-info {
   padding: 15px;
   background-color: black;
@@ -114,26 +118,19 @@
     opacity: 0.3;
   }
 }
-.apply-button {
+.game-button{
   display: inline-block;
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
+  background-color: #000000;
+  border: 1px solid #ff0000;
+  border-radius: 1px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.apply-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-.apply-button:active {
-  background-color: #003f7f;
-}
+
 .game-info {
   padding: 15px;
   background-color: #f9f9f9;

@@ -1,0 +1,141 @@
+.cnten{
+    background-color: black;
+    height: 100%;
+    margin-top: -34px;
+    margin-bottom: -34px;
+
+}
+.games-details-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 234, 0.3);
+    animation: fadeIn 1s ease-in-out;
+  }
+.buttonn-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .apply-button {
+    background-color: #196660; /* Couleur futuriste */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .apply-button:hover {
+    background-color: #00ccb3; /* Changement de couleur au survol */
+  }
+  /* Animation d'apparition */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Conteneur de la vidéo */
+  .games-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.5);
+  }
+  
+  /* Vidéo du jeu */
+  .games-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  /* Contenu du jeu */
+  .game-content {
+    padding: 1rem;
+  }
+  
+  /* Titre du jeu */
+  .games-title {
+    font-size: 3rem;
+    color: #00ffea;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: glow 2s infinite alternate;
+  }
+  
+  /* Animation de lueur pour le titre */
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea, 0 0 20px #00ffea;
+    }
+    50% {
+      text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;
+    }
+    100% {
+      text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea, 0 0 20px #00ffea;
+    }
+  }
+  
+  /* Description du jeu */
+  .games-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-align: justify;
+  }
+  
+  /* Titre des règles */
+  .games-rules-title {
+    font-size: 2rem;
+    color: #00ffea;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Règles du jeu */
+  .games-rules {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #00ffea;
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.3);
+  }
+  
+  /* État de chargement */
+  .loading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #00ffea;
+    margin-top: 5rem;
+    animation: glow 2s infinite alternate;
+  }
+  
+  /* État d'erreur */
+  .error {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ff6f61;
+    margin-top: 5rem;
+    animation: glow 2s infinite alternate;
+  }

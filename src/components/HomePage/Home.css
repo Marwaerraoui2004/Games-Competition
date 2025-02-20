@@ -172,14 +172,17 @@
 }
 
 .about-text p {
+  margin-left: 20px;
   font-size: 1.2rem;
   color: #ddd;
   line-height: 1.6;
 }
 .about-video {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
+  margin-right: 30px;
   border-radius: 100%;
+  filter: drop-shadow(0 0 20px rgba(247, 78, 247, 0.884));
 }
 
 

@@ -1,0 +1,17 @@
+.star-rating {
+    display: flex;
+    margin-bottom: -50px;
+  }
+  
+  .star-rating .star {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .star-rating .on {
+    color: gold;
+  }
+  
+  .star-rating .off {
+    color: #b4b4b4;
+  }

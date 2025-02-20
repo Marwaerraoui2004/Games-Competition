@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./Home.css";
 import DetailsComp from '../Competition/CompetitionDetails';
+import Hyperspeed from './HyperSeed';
 
 function Home() {
   const scrollToDetails = (e) => {
@@ -12,12 +13,11 @@ function Home() {
   return (
     <div>
     <div className="page">
-      <video className="background-video" autoPlay muted loop>
-        <source src="video.mp4" type="video/mp4" />
-      </video>
+      <Hyperspeed />
 
       <div className="bodyPage">
         <div className="text">
+        
           <h1>
             <span className="first-char">V</span>R GAMING BOOMS
             <span className="first-char">!</span>
@@ -29,9 +29,7 @@ function Home() {
             <button className="btn" onClick={scrollToDetails}><span>See More</span></button>
           </Link>
         </div>
-        <div className="hero">
-          <img src="image.png" alt="Hero" />
-        </div>
+         
       </div>
 
       

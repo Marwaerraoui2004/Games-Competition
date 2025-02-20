@@ -19,6 +19,7 @@ const App = () => {
   };
 
   return (
+  <div className="app"> 
     <CompetitionProvider>
       <Router>
         {isIntroCompleted && <Navbar />} 
@@ -29,10 +30,12 @@ const App = () => {
           <Route path="/participants" element={<Participants />} />
           <Route path="/games" element={<GameList />}/>
           <Route path="/postuler" element={<Login />}/>
+          <Route path="/game-details/:id" element={<GameDetails />}/>
         </Routes>
-        <Footer/>
+        {isIntroCompleted && <Footer/>} 
       </Router>
     </CompetitionProvider>
+    </div>
   );
 };
 

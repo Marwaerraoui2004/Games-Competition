@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";  // Importation du hook useNavigate
+import { useNavigate } from "react-router-dom";  
 import './login.css';
 
 export default function RegisterForCompetition() {
@@ -8,33 +8,29 @@ export default function RegisterForCompetition() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const navigate = useNavigate();  // Initialisation du hook useNavigate
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // Envoi des données de l'utilisateur à l'API Laravel
       const response = await axios.post("http://127.0.0.1:8000/api/competitions/register", {
         name,
         email,
       });
 
-      // Affichage du message de succès
       setMessage(response.data.message);
 
-      // Redirection vers /home après succès
-      navigate('/home');
+      navigate('/participants');
     } catch (error) {
       console.error(error);
       setMessage("Erreur lors de l'inscription. Vérifiez vos données.");
     }
   };
 
-  // Fonction pour gérer l'appui sur la touche 'Entrée'
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      handleSubmit(e); // Appeler handleSubmit si 'Entrée' est pressée
+      handleSubmit(e); 
     }
   };
 
@@ -50,7 +46,7 @@ export default function RegisterForCompetition() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            onKeyDown={handleKeyDown}  // Ajouter l'événement pour 'Entrée'
+            onKeyDown={handleKeyDown}  
           />
           <input
             className="form-input"
@@ -59,7 +55,7 @@ export default function RegisterForCompetition() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            onKeyDown={handleKeyDown}  // Ajouter l'événement pour 'Entrée'
+            onKeyDown={handleKeyDown} 
           />
           <button type="submit" className="submit-button">
             Postuler

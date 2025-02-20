@@ -5,6 +5,8 @@ footer {
     text-align: center;
     font-family: 'Arial', sans-serif;
     position: relative;
+    margin-bottom: -100px;
+    
   }
   
   .footer-content {
@@ -30,7 +32,7 @@ footer {
   }
   
   .social-icon img:hover {
-    transform: scale(1.1);  /* Légère augmentation de la taille au survol */
+    transform: scale(1.1);  
   }
   
   .copyright {
@@ -40,7 +42,6 @@ footer {
     font-family: 'Arial', sans-serif;
   }
   
-  /* Pour mobile, réduire la taille des icônes */
   @media (max-width: 768px) {
     .social-icon img {
       width: 30px;

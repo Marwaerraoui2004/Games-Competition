@@ -1,15 +1,17 @@
-/* Intro.css */
-
+.container-I{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  
+}
 .intro-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: black;  /* Fond noir pour faire ressortir l'effet chaud */
-    position: relative;
-    overflow: hidden;
-  }
-  
+    background-color: black;   
+  }  
   .flame {
     position: absolute;
     width: 150px;
@@ -17,9 +19,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(45deg, #ff00ff, #00ffff,#ffd700 ); /* Dégradé de couleurs chaudes pour simuler la flamme */
+    background: linear-gradient(45deg, #ff00ff, #00ffff,#ffd700 ); 
     border-radius: 50%;
-    animation: flame-animation 1.5s infinite alternate; /* Animation de la flamme */
+    animation: flame-animation 1.5s infinite alternate; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +39,7 @@
       transform: translate(-50%, -50%) scale(1);
     }
     100% {
-      transform: translate(-50%, -50%) scale(1.2); /* Effet de pulsation pour simuler une flamme qui grandit */
+      transform: translate(-50%, -50%) scale(1.2); 
     }
   }
   

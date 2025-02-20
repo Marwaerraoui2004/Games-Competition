@@ -1,6 +1,12 @@
+import { useLocation } from "react-router-dom";
 import "./Footer.css";
 
 export default function Footer() {
+  const location = useLocation();
+  if (location.pathname === '/') {
+    return null;
+  }
+
   return (
     <footer id="footer">
       <div className="footer-content">

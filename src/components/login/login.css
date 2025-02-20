@@ -12,6 +12,7 @@
   padding: 20px;
   box-sizing: border-box;
   z-index: 0;
+  overflow: hidden;
 }
 
 .form-container::before {
@@ -21,43 +22,89 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.89); /* Fond noir semi-transparent */
+  background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
   z-index: -1;
+}
+
+/* Effet de particules animées (optionnel) */
+.form-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+  background-size: 20px 20px;
+  animation: moveParticles 5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveParticles {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 20px 20px;
+  }
 }
 
 /* Formulaire d'inscription */
 .register-form {
-  background-color: white;
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.95); /* Fond blanc légèrement transparent */
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 450px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px); /* Effet de flou pour un look moderne */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure subtile */
 }
 
+/* Titre du formulaire */
 .form-heading {
-  font-size: 2em;
+  font-size: 2.2em;
   color: #333;
-  margin-bottom: 20px;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Champs de saisie */
 .form-input {
   width: 100%;
   padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  margin: 15px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   font-size: 1em;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .form-input:focus {
   border-color: #4c8bf5;
   outline: none;
+  box-shadow: 0 0 10px rgba(76, 139, 245, 0.5);
+  transform: scale(1.02);
 }
 
 /* Bouton de soumission */
@@ -67,14 +114,25 @@
   background-color: #4c8bf5;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1.1em;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .submit-button:hover {
   background-color: #3578e5;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 139, 245, 0.4);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(76, 139, 245, 0.4);
 }
 
 /* Messages de succès ou d'erreur */
@@ -82,10 +140,36 @@
   color: #28a745;
   font-size: 1em;
   margin-top: 20px;
+  animation: fadeIn 1s ease-out;
 }
 
 .error-message {
   color: #e74c3c;
   font-size: 1em;
   margin-top: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Lien supplémentaire (optionnel) */
+.form-link {
+  color: #4c8bf5;
+  text-decoration: none;
+  font-size: 0.9em;
+  margin-top: 15px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.form-link:hover {
+  color: #3578e5;
+  text-decoration: underline;
 }

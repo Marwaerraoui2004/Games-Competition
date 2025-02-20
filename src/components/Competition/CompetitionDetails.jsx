@@ -21,6 +21,7 @@ export default function DetailsComp() {
   const endDate = new Date(competition.end_date).toLocaleString();
 
   return (
+    <div className='divParent'>
     <div className='container' id='Details'>
     <div className="details-comp-container">
     <img src="https://cdn2.unrealengine.com/fortnite-crew-featured-outfit-1518x1546-cd216fad3f2e.png?resize=1&w=512 512w, https://cdn2.unrealengine.com/fortnite-crew-featured-outfit-1518x1546-cd216fad3f2e.png?resize=1&w=768 768w, https://cdn2.unrealengine.com/fortnite-crew-featured-outfit-1518x1546-cd216fad3f2e.png?resize=1&w=1024 1024w, https://cdn2.unrealengine.com/fortnite-crew-featured-outfit-1518x1546-cd216fad3f2e.png?resize=1&w=1280 1280w, https://cdn2.unrealengine.com/fortnite-crew-featured-outfit-1518x1546-cd216fad3f2e.png?resize=1&w=1600 1600w, https://cdn2.unrealengine.com/fortnite-crew-featured-outfit-1518x1546-cd216fad3f2e.png?resize=1&w=1920 1920w, https://cdn2.unrealengine.com/fortnite-crew-featured-outfit-1518x1546-cd216fad3f2e.png?resize=1&w=2560 2560w" alt="" />
@@ -58,6 +59,7 @@ export default function DetailsComp() {
       </section>
       </center>
       
+    </div>
     </div>
     </div>
   );

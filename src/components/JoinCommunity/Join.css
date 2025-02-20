@@ -1,0 +1,69 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 📌 Réduction de la taille de JoinCommunity */
+.join-community {
+    max-width: 100%; /* Réduit la largeur */
+    background-color: #06121f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 10px auto; /* Réduit la marge externe */
+    padding: 10px; /* Réduit le padding interne */
+}
+
+.title {
+    color: white;
+    font-size: 25px; /* Taille de police réduite */
+    margin-bottom: 5px; /* Espace minimal sous le titre */
+}
+
+.title span {
+    color: rgb(3, 130, 189);
+}
+
+.text {
+    color: white;
+    font-size: 12px; /* Taille de police réduite */
+    margin-bottom: -160px; 
+    margin-top: -160px; 
+    line-height: 1.3; /* Réduit l'espace entre les lignes */
+}
+
+/* ✅ Ajustement du bouton */
+.join-community-button {
+    padding: 6px 12px; /* Padding réduit */
+    font-size: 18px; /* Taille de police réduite */
+    font-weight: bold;
+    color: white;
+    background-color: #000000;
+    border: 1px solid rgb(3, 130, 189);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: -80px; /* Espace minimal au-dessus du bouton */
+}
+
+.join-community-button:hover {
+    background-color: rgb(3, 130, 189);
+    transform: scale(1.05);
+}
+
+.join-community-button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ✅ Footer toujours en bas */
+footer {
+    background-color: #06121f;
+    color: white;
+    text-align: center;
+    padding: 8px 0; /* Padding réduit */
+    width: 100%;
+    margin-top: auto;
+}
